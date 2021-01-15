@@ -1,14 +1,14 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 LABEL maintainer="stavhaygnzhan@gmail.com"
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get install -y binutils
-RUN apt-get install -y sudo python2.7 python-pip python-dev git gcc gcc-multilib gdb vim ruby gem zsh wget nmap netcat
+RUN apt-get install -y sudo python3 python3-pip python3-dev git gcc gcc-multilib gdb vim ruby gem zsh wget nmap netcat
 
 # Install pwntools
-RUN pip install pwntools
+RUN pip3 install pwntools
 
 # Install ROPgadget
-RUN pip install ropgadget
+RUN pip3 install ropgadget
 
 # Install one_gadget
 RUN gem install one_gadget

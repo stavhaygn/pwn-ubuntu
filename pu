@@ -3,9 +3,9 @@
 workdir="/home/pwner/ctf"
 name=$(basename $(pwd))
 check_name=`docker ps -a | grep $name`
-arg=''
-command=''
-libc=''
+arg=""
+command=""
+libc=""
 
 if [ $# -eq 0 ]; then
     arg="-it"
@@ -20,7 +20,7 @@ else
 fi
 
 if [[ -z $check_name ]]; then
-    docker run $arg -e "LD_PRELOAD=$libc" -v $(pwd):$workdir --cap-add=SYS_PTRACE --security-opt seccomp=unconfined --name $name --rm pwn-ubuntu:18.04 $command
+    docker run $arg -e "LD_PRELOAD=$libc" -v $(pwd):$workdir --cap-add=SYS_PTRACE --security-opt seccomp=unconfined --name $name --rm pwn-ubuntu:20.04 $command
 else 
     docker exec $arg -e "LD_PRELOAD=$libc" $name $command
 fi

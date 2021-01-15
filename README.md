@@ -1,5 +1,5 @@
 # Pwn-ubuntu
-Easy to setup a docker environment(ubuntu 18.04 glibc 2.27-3ubuntu1) for pwn in CTF.
+Easy to setup a docker environment(ubuntu 20.04 glibc 2.31-0ubuntu9.1) for pwn in CTF.
 
 ## Setup
 You have to install docker before setup this.
